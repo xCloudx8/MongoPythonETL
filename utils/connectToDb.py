@@ -15,3 +15,8 @@ def connect():
         print('Connection refused')
     
     return conn
+
+def connectToDb():
+    conn = connect()
+    db = conn.testDatabase
+    return db

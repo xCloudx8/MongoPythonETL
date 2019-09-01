@@ -1,4 +1,5 @@
 from lib import function1
+from app import writeToDb
 from utils import connectToDb
 import os
 from dotenv import load_dotenv
@@ -9,12 +10,8 @@ connection = connectToDb.connect()
 db = connection.testDatabase
 collection = db.testCollection
 
-dataExample = {
-    "_id": "1",
-    "Nome": "Nome",
-    "Surname": "Cognome"
-}
 
+writeToDb.writeData
 #collection.insert_one(dataExample)
 
 cursor = collection.find()
