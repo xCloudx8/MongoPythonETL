@@ -10,11 +10,12 @@ db = connection.testDatabase
 collection = db.testCollection
 
 dataExample = {
-    "Name": "Nome",
+    "_id": "1",
+    "Nome": "Nome",
     "Surname": "Cognome"
 }
 
-collection.insert_one(dataExample)
+#collection.insert_one(dataExample)
 
 cursor = collection.find()
 for record in cursor:
