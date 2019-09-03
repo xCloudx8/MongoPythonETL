@@ -21,10 +21,10 @@ def connect():
 
 def connectToDb():
     conn = connect()
-    db = conn.os.environ.get["MONGO_DB"]
+    db = conn.testDb
     return db
 
 def connectToDbColl():
     db = connectToDb()
-    coll = db.os.environ.get["MONGO_COLLECTION"]
+    coll = db.testCollection
     return coll

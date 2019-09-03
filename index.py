@@ -7,12 +7,13 @@ from app import writeToDb, readFromDb
 from app.dataStructure import mainStructure
 from dotenv import load_dotenv
 
-if (alreadyExists.exists):
+data = mainStructure.dataStructure()
+
+if (alreadyExists.exists()):
     print("Already exists")
 else: 
     writeToDb.writeData(data)
-
+    
 res = readFromDb.read()
 
-for doc in res:
-    print(doc)
+print(list(res))
