@@ -6,17 +6,25 @@ from dotenv import load_dotenv
 load_dotenv()
 
 # Connect
-def connect():
+def connectWithPrint():
     conn = pymongo.MongoClient(os.environ.get("MONGO_HOST"), int(os.environ.get('MONGO_PORT')))
     if conn:
         print('Connection successfull at: ' + os.environ.get("MONGO_HOST") + ' ' +os.environ.get('MONGO_PORT'))
-        #print('Available databases: ' + str(conn.database_names()))
     else:
         print('Connection refused')
     
     return conn
 
+def connect():
+    conn = pymongo.MongoClient(os.environ.get("MONGO_HOST"), int(os.environ.get('MONGO_PORT')))
+    return conn
+
 def connectToDb():
     conn = connect()
-    db = conn.testDatabase
+    db = conn.os.environ.get["MONGO_DB"]
     return db
+
+def connectToDbColl():
+    db = connectToDb()
+    coll = db.os.environ.get["MONGO_COLLECTION"]
+    return coll
